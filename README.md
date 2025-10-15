@@ -8,6 +8,10 @@
 // 
 //===----------------------------------------------------------------------===//-->
 
+Files necessary to build and run a MILR-AIE passthrough kernel, to serve as a development template. (Python-only version)
+
+Original codes are available at https://github.com/Xilinx/mlir-aie/tree/main/programming_examples/basic/passthrough_pykernel, by AMD, under Apache 2.0 license.
+
 # Passthrough Kernel:
 
 This IRON design flow example, called "Passthrough Kernel", demonstrates a simple AIE implementation for a non-vectorized (scalar) memcpy on a vector of integers. In this design, a single AIE core performs the memcpy operation on a vector with a default length `4096`. The kernel, defined in Python code as a function, is configured to work on `1024` element-sized subvectors and is invoked multiple times to complete the full copy. The example consists of two primary design files: `passthrough_pykernel.py` and `passThrough.cc`, and a testbench `test.cpp` or `test.py`.
