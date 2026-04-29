@@ -48,6 +48,7 @@ build/aie.mlir: ${srcdir}/aie2.py
 	
 build/scale.o: ${srcdir}/vector_scalar_mul.cc
 	mkdir -p ${@D}
+	echo "NPU Type = $(devicename)"
 ifeq ($(devicename),npu)
 	cd ${@D} && ${PEANO_INSTALL_DIR}/bin/clang++ ${PEANOWRAP2_FLAGS} -c $< -o ${@F}
 else ifeq ($(devicename),npu2)
